@@ -1,0 +1,101 @@
+.suggestion {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    border-top: 1px solid #F1F1F1;
+    opacity: 0;
+    visibility: hidden;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform-origin: center top;
+      transform: translateY(0);
+      backface-visibility: hidden;
+      animation: rotation-show 0.5s 0.3s;
+      animation-fill-mode: backwards;
+    }
+    
+    &__content {
+      background: #fff;
+      display: flex;
+      flex: 1;
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+      padding: .5em 1em;
+      font-size: .8rem;
+      
+      .suggestion__content-right-side,
+      .suggestion__content-left-side {
+        flex: 1;
+        padding: 1em;
+        
+        h5 {
+          margin: 0;
+          padding: 0;
+          font-size: .9rem;
+          color: #757575;
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
+        
+        ul {
+          margin: 0;
+          padding: 0;
+          
+          li {
+            list-style-type: none;
+            padding: 2px 0;
+          }
+        }
+      }
+      
+      .suggestion__content-left-side ul li {
+        list-style-type: none;
+        padding: 2px 0;
+        color: #328dbb;
+        cursor: pointer;
+        transition: color .4s ease-out, transform .4s ease;
+        
+        &:hover {
+          color: #13587b;
+          transform: translateX(3px);
+        }
+      }
+      
+      .suggestion__content-right-side {
+        h5 {
+          text-align: center;
+        }
+        ul {
+          padding: 0;
+          max-width: 200px;
+          margin: auto;
+          li {
+            border: 1px solid #f3f3f3;
+            background: #FFF;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background .3s ease-out, border .4s ease-in-out;
+            
+            &:hover {
+              border: 1px solid $primary-color;
+              background: #f1f1f1;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .hide-element {
+    display: none !important;
+  }
+  
+  .mobile-search {
+    margin: 0 1em;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: 100%;
+  }
